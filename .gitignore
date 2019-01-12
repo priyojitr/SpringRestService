@@ -1,0 +1,9 @@
+# ignore
+
+.metadata
+
+
+# Maven
+log/
+target/
+/build/
