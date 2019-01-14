@@ -11,6 +11,7 @@
 	<properties>
 		<org.springframework.version>5.0.8.RELEASE</org.springframework.version>
 		<javax.servlet.version>4.0.1</javax.servlet.version>
+		<jackson.lib.version>2.9.8</jackson.lib.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -22,6 +23,11 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.lib.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
