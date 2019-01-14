@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.manager.SampleManager;
+import com.demo.props.SampleProps;
 
 @RestController
 public class HomeController {
@@ -18,5 +19,11 @@ public class HomeController {
 	public String format(@PathVariable String bFlag) {
 		SampleManager manager = new SampleManager();
 		return manager.response(bFlag);
+	}
+	
+	@GetMapping("/conf")
+	public String conf() {
+		SampleProps prop = new SampleProps();
+		return prop.show();
 	}
 }

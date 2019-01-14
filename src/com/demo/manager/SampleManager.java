@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class SampleManager {
-
+	
 	public String response(String flag) {
 		String output = "";
 		if("true".equals(flag)) {
@@ -35,4 +35,5 @@ public class SampleManager {
 			return "JSON parsing error";
 		}
 	}
+
 }
