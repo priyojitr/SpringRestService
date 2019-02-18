@@ -1,21 +1,31 @@
 package com.demo.props;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
 
-@Configuration
+@Component
 public class SampleProps {
-
-	@Value("${app.name}")
-	private String name;
 	
 	@Autowired
-	private Environment env;
+	public Environment environment;
+
+	private final String PROPERTY_APP_NAME = "app.name";
 	
-	public String show() {
-		System.out.println(env.getProperty("app.name"));
-		return this.name;
+	private String name;
+	
+	public SampleProps() {
+		// TODO Auto-generated constructor stub
+//		setEnvProp();
+	}
+	
+	public void setEnvProp() {
+		this.name = environment.getProperty(PROPERTY_APP_NAME);
+	}
+	
+	public void show() {
+		setEnvProp();
+		System.out.println(this.name);
+		
 	}
 }

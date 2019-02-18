@@ -1,10 +1,15 @@
 package com.demo.manager;
 
+import org.springframework.stereotype.Service;
+
+import com.demo.exceptions.AnotherCustomException;
+import com.demo.exceptions.CustomException;
 import com.demo.responses.FailureResponse;
 import com.demo.responses.SuccessResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+@Service
 public class SampleManager {
 	
 	public String response(String flag) {
@@ -36,4 +41,13 @@ public class SampleManager {
 		}
 	}
 
+	public String process(boolean flag) {
+		if(flag) {
+			throw new CustomException("custom exception message");
+		} 
+		if(!flag) {
+			throw new AnotherCustomException("another custom exception message");
+		}
+		return String.valueOf(flag);
+	}
 }
